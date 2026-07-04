@@ -6,7 +6,7 @@
 
 Most agent projects show an agent *doing* a task. SentinelMCP does the opposite: it's a multi-agent system whose job is to attack and score other agents — checking them for prompt injection, tool misuse, prompt/data exfiltration, and unreliable behavior under adversarial pressure — then reports the results as a reliability scorecard.
 
-![sentinelmcp Banner](https://raw.githubusercontent.com/MusaIslamFahad/sentinelmcp/main/assets/banner.png)
+![sentinelmcp Banner](https://raw.githubusercontent.com/MusaIslamFahad/sentinelmcp/main/assets/banner.jpg)
 
 Runs entirely on free-tier infrastructure. No credit card required.
 
