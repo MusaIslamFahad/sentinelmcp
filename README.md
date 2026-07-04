@@ -1,10 +1,16 @@
+<div align="center">
+ 
 # SentinelMCP
 
 **An automated red-teaming and reliability-auditing platform for AI agents, exposed as an MCP server.**
 
 Most agent projects show an agent *doing* a task. SentinelMCP does the opposite: it's a multi-agent system whose job is to attack and score other agents — checking them for prompt injection, tool misuse, prompt/data exfiltration, and unreliable behavior under adversarial pressure — then reports the results as a reliability scorecard.
 
+![sentinelmcp Banner](https://raw.githubusercontent.com/MusaIslamFahad/sentinelmcp/main/assets/banner.png)
+
 Runs entirely on free-tier infrastructure. No credit card required.
+
+</div>
 
 ---
 
