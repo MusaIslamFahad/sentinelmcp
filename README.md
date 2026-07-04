@@ -4,7 +4,17 @@
 
 **An automated red-teaming and reliability-auditing platform for AI agents, exposed as an MCP server.**
 
-Most agent projects show an agent *doing* a task. SentinelMCP does the opposite: it's a multi-agent system whose job is to attack and score other agents — checking them for prompt injection, tool misuse, prompt/data exfiltration, and unreliable behavior under adversarial pressure — then reports the results as a reliability scorecard.
+Most agent projects show an agent *doing* a task. SentinelMCP does the opposite: it's a multi-agent system whose job is to attack and score other agents - checking them for prompt injection, tool misuse, prompt/data exfiltration, and unreliable behavior under adversarial pressure then reports the results as a reliability scorecard.
+
+![Python](https://img.shields.io/badge/python-3.12%2B-blue.svg)
+![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)
+![LangGraph](https://img.shields.io/badge/orchestration-LangGraph-1C3C3C)
+![MCP](https://img.shields.io/badge/protocol-MCP-8A2BE2)
+![Cost](https://img.shields.io/badge/cost-%240%20free--tier-brightgreen)
+![Tests](https://img.shields.io/badge/tests-17%20passing-brightgreen)
+![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
+![GitHub stars](https://img.shields.io/github/stars/MusaIslamFahad/sentinelmcp?style=social)
+![GitHub last commit](https://img.shields.io/github/last-commit/MusaIslamFahad/sentinelmcp)
 
 ![sentinelmcp Banner](https://raw.githubusercontent.com/MusaIslamFahad/sentinelmcp/main/assets/banner.jpg)
 
@@ -19,14 +29,14 @@ Runs entirely on free-tier infrastructure. No credit card required.
 Four agents, orchestrated with LangGraph:
 
 ```
-┌───────────┐     ┌───────────┐     ┌──────────┐     ┌───────────┐
-│ Attacker  │ ──▶ │  Target   │ ──▶ │  Judge   │ ──▶ │ Reporter  │
-│  agent    │     │  agent    │     │  agent   │     │  agent    │
-└───────────┘     └───────────┘     └──────────┘     └───────────┘
+┌───────────┐      ┌───────────┐      ┌──────────┐      ┌───────────┐
+│ Attacker  │ ──▶ │ Target     │ ──▶ │  Judge   │ ──▶ │ Reporter  │
+│  agent    │      │  agent    │      │  agent   │      │  agent    │
+└───────────┘      └───────────┘      └──────────┘      └───────────┘
  selects/mutates    system under      scores vs.        aggregates
- adversarial         test (your       rubric, JSON       into scorecard,
- test case           agent or the     verdict             flags high-
-                     sample one)                          severity fails
+ adversarial        test (your        rubric, JSON      into scorecard,
+ test case          agent or the      verdict           flags high-
+                    sample one)                         severity fails
 ```
 
 - **Attacker** — plays back a curated adversarial prompt, or (optionally) has an LLM paraphrase it into a fresh variant.
@@ -174,3 +184,52 @@ sentinelmcp/
 - **Add an explainability layer** — attribute *which part* of a long/adversarial prompt triggered a deviation (a natural next step, and a nice callback if you've done SHAP/Grad-CAM work elsewhere).
 - **Swap SQLite for Postgres** if you need concurrent writers — `storage/db.py` is intentionally the only file that would need to change.
 - **Publish the MCP server** so others can plug it into their own agent stack via `npx`/`uvx`.
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! If you'd like to improve the project:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/your-feature`)
+3. Commit your changes (`git commit -m 'Add some feature'`)
+4. Push to the branch (`git push origin feature/your-feature`)
+5. Open a Pull Request
+
+**Ideas for contributions:** additional attack categories, real function-calling for tool-hijack detection, a confidence-based human review queue, Postgres backend for concurrent writes, or CI/CD integration for automated runs.
+
+---
+
+## 👤 Author
+
+**Md. Musa Islam Fahad**  
+CSE (Data Science) · Daffodil International University, Dhaka  
+📧 musa.islam.fahad@gmail.com  
+🌐 [Portfolio](https://musaislamfahad.vercel.app) · [GitHub](https://github.com/MusaIslamFahad) · [LinkedIn](https://linkedin.com/in/md-musa-islam-fahad-b18759249)
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License** - see [LICENSE](LICENSE) for details.  
+Free to use, modify, and deploy.
+
+---
+
+## 🙏 Acknowledgements
+
+- [LangGraph](https://github.com/langchain-ai/langgraph) - Multi-agent orchestration
+- [Model Context Protocol](https://modelcontextprotocol.io) - The MCP spec and Python SDK this project implements against
+- [Groq](https://groq.com) - Free-tier LLM inference
+- [Ollama](https://ollama.com) - Local model runtime
+- [Streamlit](https://streamlit.io) - Dashboard framework
+---
+
+<div align="center">
+
+Built as a demonstration of automated AI agent security testing.
+
+**[⬆ Back to Top](#sentinelmcp)**
+
+</div>
